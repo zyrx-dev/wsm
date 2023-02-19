@@ -19,7 +19,7 @@ In the next version more storage media will be supported including:
 
 * <h2>Memory storage media</h2>
 <h3>How to use it?</h3>
-```gotemplate
+```
 var sessionManager *wsm.SessionManager
 
 func init() {
@@ -32,7 +32,7 @@ are expired.
 
 
 Then you are able to access the methods of session manager:
-```gotemplate
+```
 // to initialize a session
 session, err := sessionManager.StartSession(response, request)
 
@@ -42,7 +42,7 @@ sessionManager.EndSession(response, request)
 
 After successfully initializing a session, you can retrieve/modify its value,
 which it is a map of key/value pairs of type interface:
-```gotemplate
+```
 // to set a session value
 err := session.SetValue("username", "zyrx")
 // to retrieve a value
