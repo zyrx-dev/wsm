@@ -5,6 +5,7 @@ to the web application in order to manage sessions with handling
 them with ease and storing them in different storage media.
 
 <h2>How to install?</h2>
+
 ```
 go get github.com/zyrx-dev/wsm
 ```
@@ -19,6 +20,7 @@ In the next version more storage media will be supported including:
 
 * <h2>Memory storage media</h2>
 <h3>How to use it?</h3>
+
 ```
 var sessionManager *wsm.SessionManager
 
@@ -27,11 +29,13 @@ func init() {
     go sessionManager.SessionsExpirationRoutine()
 }
 ```
+
 <b>NOTE</b>: SessionExpirationRoutine() is a recursive method used to destroy sessions when they
 are expired.
 
 
 Then you are able to access the methods of session manager:
+
 ```
 // to initialize a session
 session, err := sessionManager.StartSession(response, request)
@@ -42,6 +46,7 @@ sessionManager.EndSession(response, request)
 
 After successfully initializing a session, you can retrieve/modify its value,
 which it is a map of key/value pairs of type interface:
+
 ```
 // to set a session value
 err := session.SetValue("username", "zyrx")
